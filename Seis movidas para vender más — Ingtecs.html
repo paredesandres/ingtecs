@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seis movidas para vender más — Ingtecs</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12181c; --bg-alt:#171e23;
+    --ink:#edeeE9; --ink-dim:#93a1a8;
+    --gold:#d4a537; --teal:#5c9b9b; --rust:#c06146;
+    --line:#2a3238;
+    --font-d:'Big Shoulders Display','Arial Narrow',sans-serif;
+    --font-b:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --bg:#12181c; } }
+  :root[data-theme="dark"]{ --bg:#12181c; }
+  html{ scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} *{animation:none!important;transition:none!important;} }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font-b);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:660px;margin:0 auto;padding:4.2rem 1.6rem;}
+  a{color:var(--gold);}
+  h1,h2{font-family:var(--font-d);font-weight:800;letter-spacing:-.01em;color:var(--ink);}
+  section{border-top:1px solid var(--line);}
+  section:nth-of-type(even){background:var(--bg-alt);}
+
+  .hero{border-top:none;min-height:86vh;display:flex;align-items:center;}
+  .hero .wrap{padding-top:5rem;}
+  .kicker{font-size:.95rem;color:var(--ink-dim);margin-bottom:1.1rem;}
+  .hero h1{font-size:clamp(2.3rem,7.2vw,3.6rem);line-height:1.04;margin-bottom:1.3rem;}
+  .hero p.lede{max-width:46ch;color:var(--ink-dim);font-size:1.08rem;margin-bottom:2.4rem;}
+  .stats-row{display:flex;flex-wrap:wrap;gap:0;}
+  .stat-mini{padding:0 1.5rem;border-left:1px solid var(--line);}
+  .stat-mini:first-child{padding-left:0;border-left:none;}
+  .stat-mini b{display:block;font-family:var(--font-d);font-size:1.9rem;color:var(--gold);line-height:1;}
+  .stat-mini span{font-size:.82rem;color:var(--ink-dim);}
+
+  h2{font-size:clamp(1.5rem,4.4vw,2rem);margin-bottom:1.1rem;}
+  p{max-width:60ch;}
+  p + p{margin-top:.9rem;}
+
+  .stat-grid{display:grid;gap:1.6rem;margin-top:1.6rem;}
+  .stat-card b{display:block;font-family:var(--font-d);font-size:2.6rem;color:var(--rust);line-height:1;margin-bottom:.35rem;}
+  .stat-card p{color:var(--ink-dim);font-size:.98rem;}
+  .transition{margin-top:2.2rem;font-size:1.05rem;color:var(--ink);border-left:3px solid var(--gold);padding-left:1rem;}
+
+  .prop-tag{font-size:.85rem;color:var(--teal);margin-bottom:.6rem;}
+  .prop p{color:var(--ink-dim);}
+
+  .market h2{margin-bottom:.4rem;}
+  .market-block{margin-top:1.8rem;}
+  .market-block b{display:block;font-family:var(--font-d);font-size:1.15rem;color:var(--ink);margin-bottom:.35rem;}
+  .market-block.risk b{color:var(--rust);}
+  .market-block.opp b{color:var(--teal);}
+  .market-block p{color:var(--ink-dim);}
+
+  .remember-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 1.4rem;margin-top:1.6rem;}
+  .remember-card b{display:block;font-family:var(--font-d);font-size:1.35rem;color:var(--gold);line-height:1.1;margin-bottom:.3rem;}
+  .remember-card span{font-size:.92rem;color:var(--ink-dim);}
+  @media (max-width:560px){ .remember-grid{grid-template-columns:1fr;} }
+
+  footer .wrap{padding-top:3rem;padding-bottom:3.6rem;}
+  footer p{color:var(--ink-dim);font-size:.9rem;max-width:56ch;}
+
+  .dots{position:fixed;right:1.4rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.6rem;z-index:10;}
+  .dots a{width:8px;height:8px;border-radius:50%;background:var(--line);display:block;transition:background .2s,transform .2s;}
+  .dots a.active{background:var(--gold);transform:scale(1.35);}
+  @media (max-width:900px){ .dots{display:none;} }
+  a:focus-visible, .dots a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+  .prop .next{margin-top:.9rem;font-size:.92rem;color:var(--ink-dim);border-left:2px solid var(--teal);padding-left:.8rem;}
+
+  .roadmap-grid{display:grid;gap:1.7rem;margin-top:1.6rem;grid-template-columns:repeat(3,1fr);}
+  @media (max-width:700px){ .roadmap-grid{grid-template-columns:1fr;} }
+  .phase b{display:block;font-family:var(--font-d);font-size:1.1rem;color:var(--gold);margin-bottom:.6rem;}
+  .phase ul{list-style:none;color:var(--ink-dim);font-size:.94rem;}
+  .phase li{margin-top:.55rem;padding-left:.9rem;position:relative;}
+  .phase li:before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--teal);}
+
+  .proj-note{color:var(--ink-dim);font-size:.92rem;margin-bottom:1.6rem;}
+  .bar-row{margin-top:1.7rem;}
+  .bar-row b{display:block;font-family:var(--font-d);font-size:1rem;color:var(--ink);margin-bottom:.6rem;}
+  .bar{display:flex;height:1.5rem;border-radius:3px;overflow:hidden;}
+  .bar-seg{height:100%;}
+  .legend{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.8rem;font-size:.85rem;color:var(--ink-dim);}
+  .legend span{display:inline-flex;align-items:center;gap:.4rem;}
+  .legend i{width:10px;height:10px;border-radius:2px;display:inline-block;}
+
+  /* --- Mapa del sistema (cadena de las 6 movidas) --- */
+  .chain{margin-top:2rem;display:flex;align-items:stretch;gap:.7rem;}
+  .chain-end,.chain-start{flex:0 0 128px;display:flex;flex-direction:column;justify-content:center;padding:.8rem;border:1px dashed var(--line);border-radius:8px;}
+  .chain-start span,.chain-end span{font-family:var(--font-d);font-size:1rem;color:var(--ink);margin-bottom:.25rem;}
+  .chain-start small,.chain-end small{font-size:.78rem;color:var(--ink-dim);line-height:1.3;}
+  .chain-flow{flex:1;display:flex;align-items:center;gap:0;min-width:0;}
+  .chain-node{flex:1;text-align:center;position:relative;padding:0 .3rem;}
+  .chain-node b{display:flex;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--bg);font-family:var(--font-d);align-items:center;justify-content:center;margin:0 auto .5rem;font-size:.95rem;}
+  .chain-node span{font-size:.76rem;color:var(--ink-dim);display:block;line-height:1.25;}
+  .chain-node:not(:last-child):after{content:"";position:absolute;top:15px;left:calc(50% + 22px);right:calc(-50% + 22px);height:2px;background:var(--line);}
+  @media (max-width:820px){
+    .chain{flex-direction:column;align-items:stretch;}
+    .chain-start,.chain-end{flex:none;}
+    .chain-flow{flex-direction:column;align-items:flex-start;padding-left:15px;border-left:2px solid var(--line);margin:.4rem 0;}
+    .chain-node{display:flex;align-items:center;text-align:left;gap:.8rem;padding:.5rem 0;width:100%;}
+    .chain-node b{margin:0 0 0 -30px;flex-shrink:0;}
+    .chain-node:not(:last-child):after{display:none;}
+  }
+
+  /* --- Flujo de la alianza de canal (3 pasos) --- */
+  .flow3{display:flex;gap:1rem;margin:1.7rem 0;}
+  .flow3-step{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:1rem;}
+  section:nth-of-type(even) .flow3-step{background:var(--bg-alt);border-color:#3a444b;}
+  .flow3-step b{display:block;font-family:var(--font-d);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:.4rem;}
+  .flow3-step p{font-size:.92rem;color:var(--ink);margin:0;max-width:none;}
+  .flow3-arrow{display:flex;align-items:center;color:var(--gold);font-size:1.3rem;flex:0 0 auto;}
+  @media (max-width:700px){ .flow3{flex-direction:column;} .flow3-arrow{transform:rotate(90deg);justify-content:center;padding:.1rem 0;} }
+
+  .how-to{margin:1.6rem 0;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:8px;}
+  .how-to b{display:block;font-family:var(--font-d);font-size:1rem;color:var(--gold);margin-bottom:.6rem;}
+  .how-to ol{margin:0;padding-left:1.15rem;color:var(--ink-dim);font-size:.94rem;}
+  .how-to li{margin-top:.5rem;}
+  .note-confirm{font-size:.86rem;color:var(--ink-dim);font-style:italic;}
+
+  /* --- Línea de tiempo de la hoja de ruta --- */
+  .timeline{display:flex;gap:1.6rem;margin-top:2.2rem;position:relative;}
+  .timeline:before{content:"";position:absolute;top:7px;left:0;right:0;height:2px;background:var(--line);}
+  .tl-item{flex:1;position:relative;padding-top:1.7rem;}
+  .tl-dot{position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--bg);}
+  section:nth-of-type(even) .tl-dot{box-shadow:0 0 0 4px var(--bg-alt);}
+  .tl-item b{display:block;font-family:var(--font-d);font-size:1.1rem;color:var(--ink);margin-bottom:.6rem;}
+  .tl-item ul{list-style:none;color:var(--ink-dim);font-size:.9rem;padding:0;}
+  .tl-item li{margin-top:.5rem;padding-left:.9rem;position:relative;}
+  .tl-item li:before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--teal);}
+  @media (max-width:700px){
+    .timeline{flex-direction:column;gap:1.9rem;}
+    .timeline:before{top:0;bottom:0;left:6px;width:2px;height:auto;right:auto;}
+    .tl-item{padding-top:0;padding-left:1.7rem;}
+    .tl-dot{top:2px;left:0;}
+  }
+
+  /* --- Espectro del terreno de mercado --- */
+  .spectrum{margin-top:1.8rem;}
+  .spectrum-bar{height:9px;border-radius:5px;background:linear-gradient(to right,var(--rust),var(--gold),var(--teal));}
+  .spectrum-labels{display:flex;justify-content:space-between;gap:1.4rem;margin-top:.9rem;}
+  .spectrum-label{max-width:47%;}
+  .spectrum-label b{display:block;font-family:var(--font-d);font-size:1.05rem;margin-bottom:.3rem;}
+  .spectrum-label.risk b{color:var(--rust);}
+  .spectrum-label.opp{text-align:right;}
+  .spectrum-label.opp b{color:var(--teal);}
+  .spectrum-label span{font-size:.86rem;color:var(--ink-dim);line-height:1.3;display:block;}
+  @media (max-width:520px){ .spectrum-labels{flex-direction:column;} .spectrum-label,.spectrum-label.opp{max-width:100%;text-align:left;} }
+</style>
+</head>
+<body>
+
+<nav class="dots" aria-label="Secciones">
+  <a href="#hero" title="Inicio"></a>
+  <a href="#contexto" title="Contexto"></a>
+  <a href="#bloqueo" title="El bloqueo real"></a>
+  <a href="#sistema" title="Cómo se conecta todo"></a>
+  <a href="#p1" title="Alianza de canal"></a>
+  <a href="#p2" title="Contrato, no litro"></a>
+  <a href="#p3" title="Licenciar el modelo"></a>
+  <a href="#p4" title="Barrera de entrada"></a>
+  <a href="#p5" title="A quién venderle"></a>
+  <a href="#p6" title="Margen por línea"></a>
+  <a href="#mercado" title="Mercado"></a>
+  <a href="#ruta" title="Hoja de ruta"></a>
+  <a href="#proyeccion" title="Proyección"></a>
+  <a href="#recordar" title="Para recordar"></a>
+</nav>
+
+<section class="hero" id="hero"><div class="wrap">
+  <p class="kicker">Estrategias y propuestas para Ingtecs</p>
+  <h1>El problema no es que falte marketing.<br>Es que todo pasa por una sola persona.</h1>
+  <p class="lede">Seis movidas de modelo de negocio, canal y datos —no de publicidad— para vender más y para que la marca se sostenga sin depender de usted en cada cierre.</p>
+  <div class="stats-row">
+    <div class="stat-mini"><b>18</b><span>años en el sector gas</span></div>
+    <div class="stat-mini"><b>60</b><span>empleados hoy</span></div>
+    <div class="stat-mini"><b>4</b><span>líneas de negocio</span></div>
+  </div>
+</div></section>
+
+<section id="contexto"><div class="wrap">
+  <h2>Cómo está organizado este documento</h2>
+  <p>Esto es un diagnóstico y seis propuestas de modelo de negocio, canal y datos —no de publicidad— para que Ingtecs venda más sin que cada relación comercial nueva dependa de que usted mismo la abra, la negocie y la cierre.</p>
+  <p>Primero, el bloqueo real detrás de las ventas de hoy. Luego, un mapa de cómo se conectan las seis movidas entre sí, desde la alianza de canal hasta la asignación de capital. Después, cada movida por separado, con un primer paso concreto para probarla. Y al cierre, una hoja de ruta para secuenciarlas, una proyección ilustrativa de hacia dónde podrían mover la venta, y el terreno de mercado donde se juega todo esto.</p>
+</div></section>
+
+<section id="bloqueo"><div class="wrap">
+  <h2>Lo que realmente frena las ventas hoy</h2>
+  <div class="stat-grid">
+    <div class="stat-card"><b>$18M</b><p>invertidos en publicista, ingeniera y video hace dos años. En sus propias palabras: no se movió la venta.</p></div>
+    <div class="stat-card"><b>1</b><p>persona abre, negocia y cierra cada relación comercial nueva: usted.</p></div>
+    <div class="stat-card"><b>0</b><p>líneas de negocio con margen medido. Gas, automotriz, tapicería y alimentos crecieron juntas, sin saber cuál rinde más.</p></div>
+  </div>
+  <p class="transition">Ninguna de las seis movidas que siguen es una campaña. Cambian a quién le vende, cómo cobra y con quién compite.</p>
+</div></section>
+
+<section id="sistema"><div class="wrap">
+  <h2>Cómo se conectan las seis movidas</h2>
+  <p>No son seis ideas sueltas. Son un solo cambio de modelo, mirado desde seis ángulos: pasar de vender usted mismo, uno por uno, a vender a través de un canal, con contratos firmados y con datos que dicen dónde invertir.</p>
+  <div class="chain">
+    <div class="chain-start"><span>Hoy</span><small>Una persona abre, negocia y cierra cada venta</small></div>
+    <div class="chain-flow">
+      <div class="chain-node"><b>1</b><span>Alianza de canal</span></div>
+      <div class="chain-node"><b>2</b><span>Contrato, no litro</span></div>
+      <div class="chain-node"><b>3</b><span>Licenciar el modelo</span></div>
+      <div class="chain-node"><b>4</b><span>Barrera de entrada</span></div>
+      <div class="chain-node"><b>5</b><span>A quién venderle</span></div>
+      <div class="chain-node"><b>6</b><span>Asignación de capital</span></div>
+    </div>
+    <div class="chain-end"><span>Después</span><small>El canal, los contratos y los datos deciden por usted</small></div>
+  </div>
+  <p class="transition">1 y 3 multiplican el alcance sin que usted esté presente. 2 convierte ventas puntuales en ingreso fijo. 4 y 5 defienden el precio y eligen al comprador correcto. 6 cierra el ciclo: mide qué movida —y qué línea— realmente conviene reforzar con el próximo peso.</p>
+</div></section>
+
+<section class="prop" id="p1"><div class="wrap">
+  <p class="prop-tag">Alianza de canal</p>
+  <h2>Deje de evitar a los dos grandes distribuidores — fórmelos</h2>
+  <p>Son los dos distribuidores más grandes de su categoría: empresas que ya venden a zonas y clientes que usted no cubre directamente. Hoy los trata como competencia y los evita para no chocar con sus propios clientes — el costo de eso es que todo su alcance nacional depende de que usted cierre cada venta, una por una.</p>
+  <p class="note-confirm">Nombres, cobertura exacta y volumen de cada distribuidor: confirmar con su equipo antes de la primera reunión.</p>
+
+  <div class="flow3">
+    <div class="flow3-step"><b>Hoy</b><p>Los evita. Compiten por el mismo cliente final, sin ningún acuerdo entre ustedes.</p></div>
+    <div class="flow3-arrow">→</div>
+    <div class="flow3-step"><b>La alianza</b><p>Marca blanca, comisión por venta referida, o exclusividad territorial a cambio de volumen.</p></div>
+    <div class="flow3-arrow">→</div>
+    <div class="flow3-step"><b>El resultado</b><p>Alcance nacional a través de su red, sin que usted abra y cierre cada cuenta nueva.</p></div>
+  </div>
+
+  <div class="how-to">
+    <b>Cómo formarla, paso a paso</b>
+    <ol>
+      <li>Mapear qué territorios y qué tipo de cliente cubre cada distribuidor, y dónde se solapa con lo que usted ya vende.</li>
+      <li>Elegir la modalidad antes de la reunión: marca blanca, comisión, o exclusividad territorial — no las tres a la vez.</li>
+      <li>Proponer la reunión como una alianza formal, no como una venta más ni como una queja por competencia.</li>
+      <li>Formalizar por escrito: volumen esperado, comisión o margen, territorio y duración del acuerdo.</li>
+    </ol>
+  </div>
+  <p class="next">Primer paso: proponerles a los dos distribuidores una reunión para hablar de marca blanca o comisión — no una venta más, una alianza.</p>
+</div></section>
+
+<section class="prop" id="p2"><div class="wrap">
+  <p class="prop-tag">Modelo de ingreso</p>
+  <h2>Venda el contrato, no el litro</h2>
+  <p>Lavaderos, restaurantes y flotas hoy le compran producto una vez. Poner o financiar el equipo —como el de tapicería de $9M— a cambio de un contrato de servicio mensual con exclusividad cambia una venta puntual por ingreso recurrente, y sube el costo de irse con el competidor barato.</p>
+  <p class="next">Primer paso: elegir 2 o 3 clientes de tapicería o flotas y ofrecerles el equipo puesto a cambio de un contrato anual.</p>
+</div></section>
+
+<section class="prop" id="p3"><div class="wrap">
+  <p class="prop-tag">Expansión</p>
+  <h2>Licencie el modelo en vez de expandirlo usted mismo</h2>
+  <p>Usted es, por su propia definición, la cabeza y el negociador. Un socio en otra ciudad que invierta su capital, use su fórmula y su marca bajo entrenamiento, y pague regalías, escala geografía sin escalar su agenda.</p>
+  <p class="next">Primer paso: elegir una ciudad donde ya tenga un contacto de confianza y proponerle el modelo de licencia a esa persona, no a una empresa nueva.</p>
+</div></section>
+
+<section class="prop" id="p4"><div class="wrap">
+  <p class="prop-tag">Barrera de entrada</p>
+  <h2>Convierta el laboratorio en un sello, no en un dato técnico</h2>
+  <p>Ya tiene pruebas microbiológicas y fisicoquímicas. Una alianza con cámara de comercio o autoridad ambiental para crear una certificación formal es una barrera regulatoria que el lavadero informal no puede cruzar —y justifica el precio premium sin decir una palabra de más.</p>
+  <p class="next">Primer paso: llevar sus pruebas de laboratorio a la cámara de comercio o autoridad ambiental y preguntar qué se necesita para un sello formal.</p>
+</div></section>
+
+<section class="prop" id="p5"><div class="wrap">
+  <p class="prop-tag">A quién venderle</p>
+  <h2>El ahorro de agua no es el mensaje — es la audiencia</h2>
+  <p>Usted mismo lo identificó: al dueño del lavadero no lo mueve. Pero sí es criterio formal de compra para flotas corporativas, cadenas de restaurantes y entidades con metas de sostenibilidad. Es un cambio de comprador, no de argumento.</p>
+  <p class="next">Primer paso: listar 5 clientes corporativos o de flota con metas de sostenibilidad conocidas, y llevarles el ahorro de agua como criterio de compra.</p>
+</div></section>
+
+<section class="prop" id="p6"><div class="wrap">
+  <p class="prop-tag">Asignación de capital</p>
+  <h2>Mida el margen antes de decidir dónde crecer</h2>
+  <p>Gas, automotriz, tapicería y alimentos crecieron en paralelo sin que nadie sepa cuál deja más utilidad. Antes de poner el próximo peso en cualquiera de las cuatro, necesita ese número —no una campaña más.</p>
+  <p class="next">Primer paso: sumar ingresos y costos directos de cada línea del último trimestre, aunque sea en una hoja simple.</p>
+</div></section>
+
+<section id="ruta"><div class="wrap">
+  <h2>Por dónde empezar: una hoja de ruta posible</h2>
+  <p>No las seis movidas a la vez. Un orden posible, para validar con su equipo:</p>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><b>0–3 meses</b><ul>
+      <li>Reunión formal con los dos distribuidores grandes para plantear la alianza.</li>
+      <li>Sumar ingresos y costos de cada línea, aunque sea aproximado.</li>
+    </ul></div>
+    <div class="tl-item"><div class="tl-dot"></div><b>3–6 meses</b><ul>
+      <li>Piloto de contrato de servicio con 2 o 3 clientes de tapicería o flotas.</li>
+      <li>Primer acercamiento a cámara de comercio o autoridad ambiental para el sello.</li>
+    </ul></div>
+    <div class="tl-item"><div class="tl-dot"></div><b>6–12 meses</b><ul>
+      <li>Primer socio regional bajo el modelo de licencia.</li>
+      <li>Primeros clientes corporativos con criterio de sostenibilidad real.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="proyeccion"><div class="wrap">
+  <h2>Cómo podría cambiar de dónde viene la venta</h2>
+  <p class="proj-note">Esto es un escenario ilustrativo para pensar la estrategia, no una cifra financiera real — esa la da la movida 6, cuando mida el margen por línea.</p>
+  <div class="bar-row">
+    <b>Hoy</b>
+    <div class="bar">
+      <div class="bar-seg" style="width:88%;background:var(--rust);"></div>
+      <div class="bar-seg" style="width:12%;background:var(--line);"></div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--rust);"></i>Cierre personal — 88%</span>
+      <span><i style="background:var(--line);"></i>Otros canales — 12%</span>
+    </div>
+  </div>
+  <div class="bar-row">
+    <b>En 12 meses, si ejecuta las seis movidas</b>
+    <div class="bar">
+      <div class="bar-seg" style="width:40%;background:var(--rust);"></div>
+      <div class="bar-seg" style="width:25%;background:var(--gold);"></div>
+      <div class="bar-seg" style="width:35%;background:var(--teal);"></div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--rust);"></i>Cierre personal — 40%</span>
+      <span><i style="background:var(--gold);"></i>Canal / licencias — 25%</span>
+      <span><i style="background:var(--teal);"></i>Contratos recurrentes — 35%</span>
+    </div>
+  </div>
+</div></section>
+
+<section class="market" id="mercado"><div class="wrap">
+  <h2>El terreno donde se juega esto</h2>
+  <p>Dos fuerzas conviven en el mismo mercado. Ninguna de las seis movidas hace desaparecer la de la izquierda — la esquivan, moviendo su venta hacia la derecha.</p>
+  <div class="spectrum">
+    <div class="spectrum-bar"></div>
+    <div class="spectrum-labels">
+      <div class="spectrum-label risk"><b>Lavadero informal</b><span>compite sin cumplir regulación; cliente sensible al precio</span></div>
+      <div class="spectrum-label opp"><b>Cliente corporativo</b><span>metas de sostenibilidad y contrato recurrente; el precio premium se justifica solo</span></div>
+    </div>
+  </div>
+  <div class="market-block opp">
+    <b>La oportunidad</b>
+    <p>Clientes corporativos con metas de sostenibilidad y contratos recurrentes de limpieza semanal son terreno donde el precio premium se justifica solo, sin pelear por el bolsillo del cliente más sensible al precio.</p>
+  </div>
+  <div class="market-block risk">
+    <b>El riesgo que no desaparece</b>
+    <p>Los lavaderos informales compiten sin cumplir regulación, y el cliente promedio sigue siendo sensible al precio frente a alternativas económicas. Ninguna de las seis movidas lo elimina —lo esquivan.</p>
+  </div>
+</div></section>
+
+<section id="recordar"><div class="wrap">
+  <h2>Para recordar</h2>
+  <div class="remember-grid">
+    <div class="remember-card"><b>2 distribuidores</b><span>conviértalos en canal, no en competencia evitada</span></div>
+    <div class="remember-card"><b>$9M en equipo</b><span>conviértalo en contrato, no en venta única</span></div>
+    <div class="remember-card"><b>1 socio, 1 ciudad</b><span>antes que usted mismo en diez</span></div>
+    <div class="remember-card"><b>1 sello</b><span>la barrera que el informal no cruza</span></div>
+    <div class="remember-card"><b>0 pelea de precio</b><span>cuando vende a quien sí valora el ahorro</span></div>
+    <div class="remember-card"><b>1 número</b><span>el margen por línea que aún no mide</span></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>Basado en el análisis de la reunión grabada con el equipo de Ingtecs. Las cifras marcadas como inciertas en el documento original —nombres de distribuidores, ciudades, productos y algunas cantidades— deben confirmarse antes de usarlas en un plan formal con su equipo.</p>
+</div></footer>
+
+<script>
+(function(){
+  var dots = document.querySelectorAll('.dots a');
+  var map = {};
+  dots.forEach(function(d){ map[d.getAttribute('href').slice(1)] = d; });
+  var sections = document.querySelectorAll('section[id]');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var dot = map[e.target.id];
+        if(!dot) return;
+        if(e.isIntersecting){ dots.forEach(function(d){d.classList.remove('active');}); dot.classList.add('active'); }
+      });
+    }, {rootMargin:'-45% 0px -45% 0px'});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
