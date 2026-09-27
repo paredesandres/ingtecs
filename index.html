@@ -154,6 +154,47 @@
   .spectrum-label.opp b{color:var(--teal);}
   .spectrum-label span{font-size:.86rem;color:var(--ink-dim);line-height:1.3;display:block;}
   @media (max-width:520px){ .spectrum-labels{flex-direction:column;} .spectrum-label,.spectrum-label.opp{max-width:100%;text-align:left;} }
+
+  /* --- Ideas de otros países, por línea de negocio --- */
+  .line-group{margin-top:2.8rem;}
+  .line-group:first-child{margin-top:1.8rem;}
+  .line-title{display:flex;align-items:center;gap:.6rem;font-family:var(--font-d);font-size:1.1rem;color:var(--gold);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1.3rem;padding-bottom:.5rem;border-bottom:1px solid var(--line);}
+  .line-title i{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:0 0 auto;}
+
+  .idea-card{margin-top:2rem;padding-top:2rem;border-top:1px dashed var(--line);}
+  .idea-card:first-of-type{margin-top:0;padding-top:0;border-top:none;}
+  .idea-tag{font-size:.82rem;color:var(--teal);margin-bottom:.4rem;}
+  .idea-card h4{font-family:var(--font-d);font-size:1.3rem;font-weight:800;color:var(--ink);margin-bottom:.55rem;letter-spacing:-.01em;}
+  .idea-ref{font-size:.92rem;color:var(--ink-dim);margin-bottom:0;}
+
+  .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin:1.2rem 0;}
+  .pc b{display:block;font-family:var(--font-d);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;margin-bottom:.5rem;}
+  .pc ul{list-style:none;font-size:.88rem;color:var(--ink-dim);}
+  .pc li{margin-top:.4rem;padding-left:.9rem;position:relative;}
+  .pc li:before{content:"";position:absolute;left:0;top:.5em;width:5px;height:5px;border-radius:50%;}
+  .pc-pro b{color:var(--teal);}
+  .pc-pro li:before{background:var(--teal);}
+  .pc-con b{color:var(--rust);}
+  .pc-con li:before{background:var(--rust);}
+  @media (max-width:560px){ .pros-cons{grid-template-columns:1fr;gap:1rem;} }
+
+  .idea-impact{margin-top:.4rem;font-size:.92rem;color:var(--ink);border-left:2px solid var(--gold);padding-left:.8rem;}
+  .idea-impact b{color:var(--gold);}
+
+  .hub{margin:1.4rem 0 .3rem;display:flex;flex-direction:column;align-items:center;gap:.4rem;}
+  .hub-tier{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;}
+  .hub-tier span{padding:.5rem 1rem;border:1px solid var(--line);border-radius:6px;font-size:.82rem;color:var(--ink-dim);white-space:nowrap;}
+  .hub-top span,.hub-bottom span{border-color:var(--gold);color:var(--ink);font-family:var(--font-d);font-size:.88rem;}
+  .hub-mid span{border-color:var(--teal);color:var(--ink-dim);}
+  .hub-arrow{color:var(--ink-dim);font-size:1rem;line-height:1;}
+
+  .stat-bar{margin:1.4rem 0 .3rem;}
+  .stat-bar .bar{height:1.3rem;}
+  .stat-bar p{font-size:.85rem;color:var(--ink-dim);margin-top:.5rem;max-width:none;}
+  .stat-bar p b{color:var(--ink);}
+
+  .scene{margin:1.7rem 0;}
+  .scene svg{width:100%;height:auto;display:block;}
 </style>
 </head>
 <body>
@@ -173,6 +214,7 @@
   <a href="#ruta" title="Hoja de ruta"></a>
   <a href="#proyeccion" title="Proyección"></a>
   <a href="#recordar" title="Para recordar"></a>
+  <a href="#internacional" title="Ideas de otros países"></a>
 </nav>
 
 <section class="hero" id="hero"><div class="wrap">
@@ -189,7 +231,7 @@
 <section id="contexto"><div class="wrap">
   <h2>Cómo está organizado este documento</h2>
   <p>Esto es un diagnóstico y seis propuestas de modelo de negocio, canal y datos —no de publicidad— para que Ingtecs venda más sin que cada relación comercial nueva dependa de que usted mismo la abra, la negocie y la cierre.</p>
-  <p>Primero, el bloqueo real detrás de las ventas de hoy. Luego, un mapa de cómo se conectan las seis movidas entre sí, desde la alianza de canal hasta la asignación de capital. Después, cada movida por separado, con un primer paso concreto para probarla. Y al cierre, una hoja de ruta para secuenciarlas, una proyección ilustrativa de hacia dónde podrían mover la venta, y el terreno de mercado donde se juega todo esto.</p>
+  <p>Primero, el bloqueo real detrás de las ventas de hoy. Luego, un mapa de cómo se conectan las seis movidas entre sí, desde la alianza de canal hasta la asignación de capital. Después, cada movida por separado, con un primer paso concreto para probarla. Y al cierre, una hoja de ruta para secuenciarlas, una proyección ilustrativa de hacia dónde podrían mover la venta, el terreno de mercado donde se juega todo esto, y un grupo aparte de ideas que ya funcionan en otros países, línea por línea, para inspirar futuras movidas.</p>
 </div></section>
 
 <section id="bloqueo"><div class="wrap">
@@ -358,6 +400,274 @@
     <div class="remember-card"><b>1 sello</b><span>la barrera que el informal no cruza</span></div>
     <div class="remember-card"><b>0 pelea de precio</b><span>cuando vende a quien sí valora el ahorro</span></div>
     <div class="remember-card"><b>1 número</b><span>el margen por línea que aún no mide</span></div>
+  </div>
+</div></section>
+
+<section id="internacional"><div class="wrap">
+  <h2>Ideas adicionales: qué ya funciona en otros países</h2>
+  <p>Esto no son movidas validadas en la reunión, como las seis anteriores — son referentes reales de otros mercados, dos por cada línea del negocio, para evaluar con la misma exigencia: qué ventaja real ofrecen, qué puede salir mal, y si aplican a Ingtecs hoy o más adelante.</p>
+
+  <div class="line-group">
+    <p class="line-title"><i></i>Automotriz — lavado de carros</p>
+
+    <div class="idea-card">
+      <p class="idea-tag">Referente: Estados Unidos</p>
+      <h4>Lavado a domicilio</h4>
+      <p class="idea-ref">Un formato en crecimiento en el mercado estadounidense: el trabajador va con sus propios insumos a la casa o al parqueadero del cliente y lava el carro ahí mismo, en vez de que el cliente se desplace a un lavadero.</p>
+      <div class="scene">
+        <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación entre ir al lavadero y el lavado a domicilio">
+          <defs>
+            <symbol id="ic-car" viewBox="0 0 80 44">
+              <rect x="0" y="18" width="80" height="16" rx="6" fill="currentColor"/>
+              <path d="M14 18 L24 2 L56 2 L66 18 Z" fill="currentColor"/>
+              <rect x="20" y="6" width="12" height="10" style="fill:var(--bg);opacity:.55"/>
+              <rect x="40" y="6" width="12" height="10" style="fill:var(--bg);opacity:.55"/>
+              <circle cx="18" cy="36" r="7" style="fill:var(--ink)"/>
+              <circle cx="62" cy="36" r="7" style="fill:var(--ink)"/>
+            </symbol>
+            <symbol id="ic-building" viewBox="0 0 110 100">
+              <rect x="0" y="20" width="110" height="70" rx="4" fill="none" stroke="currentColor" stroke-width="4"/>
+              <rect x="0" y="6" width="110" height="16" fill="currentColor"/>
+              <path d="M25 90 L25 55 A20 20 0 0 1 65 55 L65 90" fill="none" stroke="currentColor" stroke-width="4"/>
+            </symbol>
+            <symbol id="ic-house" viewBox="0 0 100 100">
+              <path d="M0 40 L50 2 L100 40 L100 96 L0 96 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+              <rect x="40" y="58" width="20" height="38" fill="currentColor"/>
+              <rect x="14" y="48" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"/>
+              <rect x="70" y="48" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"/>
+            </symbol>
+            <symbol id="ic-worker" viewBox="0 0 65 70">
+              <circle cx="15" cy="10" r="10" fill="currentColor"/>
+              <path d="M0 32 Q15 20 30 32 L27 68 L3 68 Z" fill="currentColor"/>
+              <path d="M27 36 Q52 30 58 56" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            </symbol>
+          </defs>
+
+          <line x1="320" y1="15" x2="320" y2="292" style="stroke:var(--line)" stroke-width="2" stroke-dasharray="4 6"/>
+
+          <text x="160" y="26" text-anchor="middle" style="font-family:var(--font-d);font-weight:700;font-size:20px;fill:var(--rust);letter-spacing:.03em">HOY</text>
+          <line x1="15" y1="195" x2="300" y2="195" style="stroke:var(--line)" stroke-width="2"/>
+          <use href="#ic-car" x="30" y="151" width="80" height="44" style="color:var(--rust)"/>
+          <use href="#ic-building" x="190" y="95" width="110" height="100" style="color:var(--ink-dim)"/>
+          <path d="M114 150 L182 150" style="stroke:var(--ink-dim)" stroke-width="2" stroke-dasharray="5 5"/>
+          <path d="M178 144 L192 150 L178 156 Z" style="fill:var(--ink-dim)"/>
+          <circle cx="238" cy="178" r="3" style="fill:var(--teal);opacity:.6"/>
+          <circle cx="250" cy="168" r="2" style="fill:var(--gold);opacity:.6"/>
+          <circle cx="256" cy="184" r="2.5" style="fill:var(--teal);opacity:.4"/>
+          <text x="160" y="218" text-anchor="middle" style="font-size:13px;fill:var(--ink-dim)">El cliente conduce</text>
+          <text x="160" y="235" text-anchor="middle" style="font-size:13px;fill:var(--ink-dim)">hasta el lavadero</text>
+
+          <text x="480" y="26" text-anchor="middle" style="font-family:var(--font-d);font-weight:700;font-size:20px;fill:var(--teal);letter-spacing:.03em">CON LA IDEA</text>
+          <line x1="355" y1="195" x2="620" y2="195" style="stroke:var(--line)" stroke-width="2"/>
+          <use href="#ic-house" x="370" y="95" width="100" height="100" style="color:var(--teal)"/>
+          <use href="#ic-worker" x="460" y="125" width="65" height="70" style="color:var(--teal)"/>
+          <use href="#ic-car" x="500" y="151" width="80" height="44" style="color:var(--teal)"/>
+          <circle cx="520" cy="175" r="3" style="fill:var(--teal);opacity:.6"/>
+          <circle cx="528" cy="185" r="2" style="fill:var(--gold);opacity:.6"/>
+          <circle cx="513" cy="190" r="2.5" style="fill:var(--teal);opacity:.4"/>
+          <text x="480" y="218" text-anchor="middle" style="font-size:13px;fill:var(--ink-dim)">El servicio llega</text>
+          <text x="480" y="235" text-anchor="middle" style="font-size:13px;fill:var(--ink-dim)">directo a la puerta</text>
+
+          <text x="480" y="270" text-anchor="middle" style="font-family:var(--font-d);font-weight:800;font-size:42px;fill:var(--teal)">0 km</text>
+          <text x="480" y="288" text-anchor="middle" style="font-size:12px;fill:var(--ink-dim)">recorridos por el cliente</text>
+        </svg>
+      </div>
+      <div class="pros-cons">
+        <div class="pc pc-pro"><b>Ventajas</b><ul>
+          <li>El cliente ve todo el proceso: más confianza, menos reclamos.</li>
+          <li>El trabajador termina un carro completo antes de pasar al siguiente, sin la presión de rotar rápido — mejora la calidad y evita los micro-rayones típicos de los túneles automáticos.</li>
+        </ul></div>
+        <div class="pc pc-con"><b>Riesgos reales</b><ul>
+          <li>Depende de que el sitio del cliente tenga espacio, agua y electricidad disponibles.</li>
+          <li>Clima adverso cancela o retrasa el servicio, y cada trabajador atiende menos carros al día que en un lavadero fijo.</li>
+        </ul></div>
+      </div>
+      <p class="idea-impact"><b>Impacto en Ingtecs:</b> en vez de solo vender el insumo al lavadero, Ingtecs podría ofrecer el servicio completo a domicilio para flotas corporativas y hogares de alto valor — capturando margen de servicio, no solo de producto.</p>
+    </div>
+
+    <div class="idea-card">
+      <p class="idea-tag">Referente: Estados Unidos</p>
+      <h4>Membresía de lavado mensual</h4>
+      <p class="idea-ref">Cadenas de lavado estadounidenses generan hasta el 80% de sus ingresos por sitio mediante membresías mensuales de lavados ilimitados, con crecimientos anuales de 5–7% atribuidos directamente a ese modelo.</p>
+      <div class="stat-bar">
+        <div class="bar"><div class="bar-seg" style="width:80%;background:var(--teal);"></div><div class="bar-seg" style="width:20%;background:var(--line);"></div></div>
+        <p><b>80%</b> de los ingresos por sede ya vienen de membresías mensuales en cadenas de lavado de EE. UU. — el resto es venta suelta, ocasional.</p>
+      </div>
+      <div class="pros-cons">
+        <div class="pc pc-pro"><b>Ventajas</b><ul>
+          <li>Convierte ingreso variable en ingreso recurrente y predecible — la misma lógica de "contrato, no litro", aplicada al consumidor final.</li>
+          <li>Aumenta la frecuencia de uso: un miembro lava su carro varias veces más al mes que un cliente ocasional.</li>
+        </ul></div>
+        <div class="pc pc-con"><b>Riesgos reales</b><ul>
+          <li>Si la tarifa mensual queda muy baja frente al costo real por lavada, el margen se erosiona con los clientes más frecuentes.</li>
+          <li>Exige cobro recurrente y control de capacidad que la operación no tiene hoy.</li>
+        </ul></div>
+      </div>
+      <p class="idea-impact"><b>Impacto en Ingtecs:</b> aplicable a los lavaderos aliados vía la alianza de canal, o a un punto propio, como paquete adicional a lo que ya factura por producto.</p>
+    </div>
+  </div>
+
+  <div class="line-group">
+    <p class="line-title"><i></i>Gas — limpieza de cilindros (pipas)</p>
+
+    <div class="idea-card">
+      <p class="idea-tag">Referente: Irlanda / Reino Unido</p>
+      <h4>Reacondicionamiento contratado a la distribuidora</h4>
+      <p class="idea-ref">Distribuidoras de gas licuado como Flogas invierten de forma continua en inspección, cambio de válvulas y recubrimiento anticorrosivo de cilindros, como parte de un programa permanente de mantenimiento antes de volver a llenarlos.</p>
+      <div class="flow3">
+        <div class="flow3-step"><b>Entra</b><p>Cilindros sucios o desgastados, propiedad de la distribuidora.</p></div>
+        <div class="flow3-arrow">→</div>
+        <div class="flow3-step"><b>Ingtecs</b><p>Inspecciona, limpia, cambia válvulas y aplica recubrimiento anticorrosivo.</p></div>
+        <div class="flow3-arrow">→</div>
+        <div class="flow3-step"><b>Sale</b><p>Cilindros certificados, de vuelta a la distribuidora para llenarse.</p></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pc pc-pro"><b>Ventajas</b><ul>
+          <li>Un solo contrato grande con la distribuidora reemplaza muchas ventas pequeñas y dispersas.</li>
+          <li>Se alinea directamente con estándares de seguridad, reforzando el argumento del sello de la movida 4.</li>
+        </ul></div>
+        <div class="pc pc-con"><b>Riesgos reales</b><ul>
+          <li>Una distribuidora grande puede preferir montar su propia línea de limpieza en vez de subcontratarla.</li>
+          <li>Un contrato de ese tamaño concentra el riesgo: perderlo pesa mucho más que perder un cliente pequeño.</li>
+        </ul></div>
+      </div>
+      <p class="idea-impact"><b>Impacto en Ingtecs:</b> extiende directamente la alianza de canal (movida 1): además de distribuir a través de ellas, Ingtecs les vendería el servicio de limpieza como insumo de su propia operación.</p>
+    </div>
+
+    <div class="idea-card">
+      <p class="idea-tag">Referente: Jordania / Ghana</p>
+      <h4>Canje de cilindro limpio en el punto de venta</h4>
+      <p class="idea-ref">Distribuidores nacionales de gas centralizaron la limpieza y el mantenimiento en plantas propias: el cliente ya no lava ni rellena su cilindro personal, sino que lo cambia por uno ya limpio y certificado en un punto de canje.</p>
+      <div class="flow3">
+        <div class="flow3-step"><b>Llega</b><p>El cliente entrega su cilindro sucio o vacío en el punto de canje.</p></div>
+        <div class="flow3-arrow">→</div>
+        <div class="flow3-step"><b>Punto de canje</b><p>Rotación de inventario: cilindros ya limpios y certificados, listos para entregar.</p></div>
+        <div class="flow3-arrow">→</div>
+        <div class="flow3-step"><b>Sale</b><p>El cliente se va con uno limpio y certificado, sin esperar.</p></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pc pc-pro"><b>Ventajas</b><ul>
+          <li>Convierte la limpieza en un servicio de alto volumen y recurrente, no en visitas dispersas.</li>
+          <li>Mejora la percepción de seguridad e higiene del cliente final, reforzando el sello de calidad.</li>
+        </ul></div>
+        <div class="pc pc-con"><b>Riesgos reales</b><ul>
+          <li>Exige mantener inventario de cilindros limpios en rotación — capital de trabajo adicional.</li>
+          <li>Solo funciona con un socio de distribución dispuesto a operar los puntos de canje.</li>
+        </ul></div>
+      </div>
+      <p class="idea-impact"><b>Impacto en Ingtecs:</b> un uso más ambicioso y de mediano plazo de la misma alianza de canal — convierte el servicio de limpieza en infraestructura del distribuidor, no en un proveedor externo más.</p>
+    </div>
+  </div>
+
+  <div class="line-group">
+    <p class="line-title"><i></i>Aseo general — restaurantes, casas y empresas</p>
+
+    <div class="idea-card">
+      <p class="idea-tag">Referente: Estados Unidos</p>
+      <h4>Micro-franquicias de aseo con soporte centralizado</h4>
+      <p class="idea-ref">Marcas de aseo comercial como Anago operan con "franquicia maestra": la marca vende, capacita y da soporte de facturación y cumplimiento a pequeños operadores independientes, que solo se enfocan en prestar el servicio a restaurantes y empresas.</p>
+      <div class="hub">
+        <div class="hub-tier hub-top"><span>Ingtecs — marca, protocolo y soporte</span></div>
+        <div class="hub-arrow">↓</div>
+        <div class="hub-tier hub-mid"><span>Operador A</span><span>Operador B</span><span>Operador C</span></div>
+        <div class="hub-arrow">↓</div>
+        <div class="hub-tier hub-bottom"><span>Restaurantes y empresas</span></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pc pc-pro"><b>Ventajas</b><ul>
+          <li>Escala el aseo institucional sin que Ingtecs contrate directamente a cada persona que limpia.</li>
+          <li>Baja barrera de entrada para el operador local: no necesita saber de administración, solo cumplir el protocolo.</li>
+        </ul></div>
+        <div class="pc pc-con"><b>Riesgos reales</b><ul>
+          <li>La calidad depende de operadores externos que Ingtecs no controla día a día.</li>
+          <li>Exige invertir primero en sistemas de soporte antes de vender la primera micro-franquicia.</li>
+        </ul></div>
+      </div>
+      <p class="idea-impact"><b>Impacto en Ingtecs:</b> una versión más granular de la movida 3 — en vez de un solo socio por ciudad, muchos operadores pequeños bajo la misma marca y los mismos protocolos.</p>
+    </div>
+
+    <div class="idea-card">
+      <p class="idea-tag">Referente: Estados Unidos</p>
+      <h4>Plataforma de aseo residencial a demanda</h4>
+      <p class="idea-ref">Aplicaciones como Handy conectan clientes con personas de aseo bajo un modelo de reserva por app y comisión por servicio, hoy con cientos de miles de clientes atendidos en varios países.</p>
+      <div class="flow3">
+        <div class="flow3-step"><b>Reserva</b><p>El cliente pide el servicio y el horario desde una app.</p></div>
+        <div class="flow3-arrow">→</div>
+        <div class="flow3-step"><b>Asignación</b><p>Se le asigna un trabajador de aseo disponible cerca de su hogar.</p></div>
+        <div class="flow3-arrow">→</div>
+        <div class="flow3-step"><b>Cobro</b><p>El cliente paga en la app; Ingtecs se queda con una comisión.</p></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pc pc-pro"><b>Ventajas</b><ul>
+          <li>Abre el segmento de hogares, hoy fuera del radar de Ingtecs, con una inversión tecnológica relativamente baja.</li>
+          <li>El cobro por comisión no exige contratar personal de aseo directamente.</li>
+        </ul></div>
+        <div class="pc pc-con"><b>Riesgos reales</b><ul>
+          <li>El propio caso de Handy lo muestra: una vez el cliente encuentra a la persona que le gusta, puede contratarla directo y saltarse la plataforma.</li>
+          <li>Plantea preguntas legales sobre la relación laboral con quienes hacen el aseo, mejor resueltas antes de lanzar.</li>
+        </ul></div>
+      </div>
+      <p class="idea-impact"><b>Impacto en Ingtecs:</b> complementa, no reemplaza, el aseo institucional — abre un canal nuevo (hogares) sin desviar el foco de flotas y corporativos de la movida 5.</p>
+    </div>
+  </div>
+
+  <div class="line-group">
+    <p class="line-title"><i></i>Muebles y tapicería</p>
+
+    <div class="idea-card">
+      <p class="idea-tag">Referente: global (50+ países)</p>
+      <h4>Red de franquicias caseras bajo una marca</h4>
+      <p class="idea-ref">La franquicia de limpieza de tapicería y alfombras más grande del mundo opera en más de 50 países con un modelo de "franquicia maestra": el dueño de la marca en un territorio respalda a franquiciados que trabajan desde su casa, sin bodega ni local comercial.</p>
+      <div class="hub">
+        <div class="hub-tier hub-top"><span>Marca — equipo, insumo y protocolo</span></div>
+        <div class="hub-arrow">↓</div>
+        <div class="hub-tier hub-mid"><span>Franquiciado en casa A</span><span>Franquiciado en casa B</span><span>Franquiciado en casa C</span></div>
+        <div class="hub-arrow">↓</div>
+        <div class="hub-tier hub-bottom"><span>Clientes de tapicería, ciudad por ciudad</span></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pc pc-pro"><b>Ventajas</b><ul>
+          <li>Escala geografía con bajo capital por operador: cada franquiciado invierte en su propio equipo, no Ingtecs.</li>
+          <li>El bajo costo de entrada atrae a más candidatos que la licencia de una sola ciudad de la movida 3.</li>
+        </ul></div>
+        <div class="pc pc-con"><b>Riesgos reales</b><ul>
+          <li>Multiplicar operadores multiplica también el riesgo reputacional si alguno presta un mal servicio.</li>
+          <li>Exige un sistema de soporte y control de calidad más robusto que licenciar a un solo socio de confianza.</li>
+        </ul></div>
+      </div>
+      <p class="idea-impact"><b>Impacto en Ingtecs:</b> una versión de mayor volumen de la movida 3, específica para tapicería, que puede convivir con la licencia de ciudad completa en las otras líneas.</p>
+    </div>
+
+    <div class="idea-card">
+      <p class="idea-tag">Referente: global (50+ países)</p>
+      <h4>Secado rápido y bajo consumo de agua como diferenciador</h4>
+      <p class="idea-ref">Esa misma franquicia usa un proceso patentado que consume hasta 80% menos agua que la limpieza a vapor tradicional y seca en horas en vez de días — certificado como "verde", un argumento que la marca usa activamente para justificar precio premium.</p>
+      <div class="bar-row">
+        <b>Agua usada</b>
+        <div class="bar"><div class="bar-seg" style="width:100%;background:var(--rust);"></div></div>
+        <div class="legend"><span><i style="background:var(--rust);"></i>Vapor tradicional</span></div>
+        <div class="bar" style="margin-top:.5rem;"><div class="bar-seg" style="width:20%;background:var(--teal);"></div></div>
+        <div class="legend"><span><i style="background:var(--teal);"></i>Proceso de baja agua (≈80% menos)</span></div>
+      </div>
+      <div class="bar-row">
+        <b>Tiempo de secado</b>
+        <div class="bar"><div class="bar-seg" style="width:100%;background:var(--rust);"></div></div>
+        <div class="legend"><span><i style="background:var(--rust);"></i>Días — vapor tradicional</span></div>
+        <div class="bar" style="margin-top:.5rem;"><div class="bar-seg" style="width:15%;background:var(--teal);"></div></div>
+        <div class="legend"><span><i style="background:var(--teal);"></i>Horas — proceso de baja agua</span></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pc pc-pro"><b>Ventajas</b><ul>
+          <li>Refuerza el mismo argumento de ahorro de agua de la movida 5, ahora en tapicería y no solo en lavado de carros.</li>
+          <li>El secado rápido es en sí mismo un argumento de venta para hoteles y restaurantes que no pueden dejar muebles fuera de servicio por días.</li>
+        </ul></div>
+        <div class="pc pc-con"><b>Riesgos reales</b><ul>
+          <li>Si la tecnología de secado rápido no es la que Ingtecs ya tiene, exige invertir en investigación o en equipo nuevo.</li>
+          <li>Un diferenciador técnico solo vende si el comprador corporativo lo valora — de nuevo, el mismo cambio de audiencia de la movida 5.</li>
+        </ul></div>
+      </div>
+      <p class="idea-impact"><b>Impacto en Ingtecs:</b> convierte una característica técnica en un argumento comercial concreto, para el mismo comprador corporativo que ya identificó la movida 5.</p>
+    </div>
   </div>
 </div></section>
 
